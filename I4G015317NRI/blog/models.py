@@ -9,7 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, max_length=255)
     text = models.TextField()
-    author = models.TextField()
+    author = get_user_model()
     created_date = models.DateTimeField(auto_now_add=True)
     published_date = models.DateTimeField(auto_now_add=True)
 
